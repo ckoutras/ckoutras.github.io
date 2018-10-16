@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: 
+permalink: /prof_activities/
 title: Professional Activities
 description: 
 ---
