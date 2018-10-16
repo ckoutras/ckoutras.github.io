@@ -8,9 +8,11 @@ profile:
   align: right
   image: profile_web.jpg
   address: >
-    <p>Office VBM6 W4.929 (4th floor), Building 28</p>
+    <p>Office VBM6 W4.929 </p>
+    <p>4th floor, Building 28</p>
     <p>Van Mourik Broekmanweg 6</p>
-    <p>Y2628XE, Delft, Netherlands</p>
+    <p>Y2628XE, Delft </p>
+    <p>Netherlands</p>
 
 news: true
 social: true
