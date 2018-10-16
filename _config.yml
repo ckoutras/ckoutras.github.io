@@ -8,7 +8,6 @@ description: > # this means to ignore newlines until "url:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 url:  # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
@@ -22,8 +21,8 @@ twitter_username: shineon91 # your Twitter handle
 linkedin_username: christoskoutras # your LinkedIn user name
 scholar_userid: h0_h_q4AAAAJ # your Google Scholar ID
 orcid_id: # your ORCID ID
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+#contact_note: >
+ 
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 
