@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: About
 permalink: /
 title: <strong>Christos</strong> Koutras
 description: <a href="http://www.wis.ewi.tudelft.nl/" target="_blank">Web Information Systems Group</a>, Department of Software Technology, Faculty of Electrical Engineering, Mathematics and Computer Science, TU Delft
