@@ -18,6 +18,6 @@ news: false
 social: true
 ---
 
-I am a PhD Candidate at the Web Information Systems group of the Faculty of Engineering, Mathematics and Computer Science at Delft University of Technology. My supervisors are [Asterios Katsifodimos](http://asterios.katsifodimos.com) and [Christoph Lofi](http://www.wis.ewi.tudelft.nl/lofi/). My research is focused on streaming processing, while I have also worked on spatial data management.
+I am a PhD Candidate at the [Web Information Systems](http://www.wis.ewi.tudelft.nl/) group of the Faculty of Engineering, Mathematics and Computer Science at Delft University of Technology. My supervisors are [Asterios Katsifodimos](http://asterios.katsifodimos.com) and [Christoph Lofi](http://www.wis.ewi.tudelft.nl/lofi/). My research is focused on streaming processing, while I have also worked on spatial data management.
 
 I hold a Master of Philosophy (MPhil) in Computer Science from [HKUST](https://www.ust.hk/), where I was supervised by Prof. [Dimitris Papadias](https://www.cse.ust.hk/faculty/dimitris/). Prior to that, I obtained my 5-year Diploma in Electrical and Computer Engineering from [National Technical University of Athens](https://www.ntua.gr/en/).
