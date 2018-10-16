@@ -6,11 +6,11 @@ description: <a href="">Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_web.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Office VBM6 W4.929 (4th floor), Building 28</p>
+    <p>Van Mourik Broekmanweg 6</p>
+    <p>Y2628XE, Delft, Netherlands</p>
 
 news: true
 social: true
