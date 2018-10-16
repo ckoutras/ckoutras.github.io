@@ -5,6 +5,6 @@ title: Teaching
 description: 
 ---
 
-Markup: *One 
-		*Two
-		*Three
+* One 
+* Two
+* Three
