@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const bold = (s: string) => s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+const pubs = (await getCollection("publications"))
+  .map((p) => p.data)
+  .sort((a, b) => b.year - a.year);
+
+const byYear: Record<number, typeof pubs> = {};
+for (const p of pubs) (byYear[p.year] ??= []).push(p);
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+<Base title="Publications — Christos Koutras" current="publications">
+
+  <h1>Publications</h1>
+  <p class="lede">
+    Full list below. See also my <a href="https://scholar.google.com/citations?user=h0_h_q4AAAAJ&hl=en">Google Scholar</a> profile.
+  </p>
+
+  {years.map((year) => (
+    <section class="pub-year">
+      <h3>{year}</h3>
+      {byYear[year].map((p) => (
+        <div class="pub-item">
+          <span class="meta">{p.venueShort}</span>
+          <div>
+            {p.url
+              ? <a class="title" href={p.url}>{p.title}</a>
+              : <span class="title">{p.title}</span>}
+            <span class="authors" set:html={bold(p.authors)} />
+            <span class="venue">
+              {p.venue}{p.note && <em class="pub-note"> · {p.note}</em>}
+            </span>
+          </div>
+        </div>
+      ))}
+    </section>
+  ))}
+
+</Base>

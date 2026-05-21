@@ -1,0 +1,23 @@
+---
+interface Props {
+  name: string;
+  venues?: string[];
+  tagline: string;
+  links: { label: string; url: string }[];
+}
+const { name, venues = [], tagline, links } = Astro.props;
+---
+<article class="project-card">
+  <h3>{name}</h3>
+  {venues.length > 0 && (
+    <p class="project-venues">{venues.join(" · ")}</p>
+  )}
+  <p>{tagline}</p>
+  {links.length > 0 && (
+    <ul class="project-links">
+      {links.map((l) => (
+        <li><a href={l.url}>{l.label} <span aria-hidden="true">→</span></a></li>
+      ))}
+    </ul>
+  )}
+</article>

@@ -1,0 +1,146 @@
+---
+import Base from "../layouts/Base.astro";
+
+const courses = [
+  {
+    when: "Spring 2026",
+    code: "DS-GA 3001",
+    name: "Data Engineering",
+    role: "Section Leader",
+    institution: "NYU",
+    note: "Delivered lab sessions and compiled course material.",
+  },
+  {
+    when: "2019 – 2024",
+    code: "CSE1500",
+    name: "Web and Database Technologies",
+    role: "Course Coordinator",
+    institution: "TU Delft",
+    note: "Organized labs, taught tutorials, led the TA team.",
+  },
+  {
+    when: "2018 – 2024",
+    code: "CSE1505",
+    name: "Information and Data Management",
+    role: "Course Coordinator",
+    institution: "TU Delft",
+    note: "Organized labs, taught tutorials, led the TA team.",
+  },
+  {
+    when: "Spring 2018",
+    code: "COMP 3311",
+    name: "Database Management Systems",
+    role: "Teaching Assistant",
+    institution: "HKUST",
+    note: "Taught the tutorials for the second half of the course.",
+  },
+  {
+    when: "Fall 2017",
+    code: "COMP 3711",
+    name: "Design and Analysis of Algorithms",
+    role: "Teaching Assistant",
+    institution: "HKUST",
+    note: "Designed and graded course assignments.",
+  },
+  {
+    when: "Spring 2017",
+    code: "COMP 3311",
+    name: "Database Management Systems",
+    role: "Teaching Assistant",
+    institution: "HKUST",
+    note: "Taught the tutorials for the first half of the course.",
+  },
+];
+
+const guestLectures = [
+  {
+    when: "Spring 2026",
+    code: "DS-GA 3001",
+    name: "Data Engineering",
+    institution: "NYU",
+    topic: "Data Integration",
+  },
+  {
+    when: "Fall 2025",
+    code: "CS-GY 6513",
+    name: "Big Data",
+    institution: "NYU",
+    topic: "Data Integration",
+  },
+];
+
+const supervisions = [
+  {
+    when: "2020",
+    student: "K. Psarakis",
+    studentUrl: "https://kpsarakis.com/",
+    institution: "TU Delft",
+    thesis: "Holistic Schema Matching at Scale",
+  },
+  {
+    when: "2020",
+    student: "A. Ionescu",
+    studentUrl: "https://andraionescu.github.io/",
+    institution: "TU Delft",
+    thesis: "Reproducing state-of-the-art schema matching algorithms",
+  },
+  {
+    when: "2020",
+    student: "M.R. Vermeulen",
+    institution: "TU Delft",
+    thesis: "Which error detection tool to choose?",
+  },
+];
+---
+<Base title="Teaching — Christos Koutras" current="teaching">
+
+  <h1>Teaching</h1>
+  <p class="lede">Courses, guest lectures, and student supervision.</p>
+
+  <section class="pub-year">
+    <h3>Courses</h3>
+    {courses.map((c) => (
+      <div class="pub-item">
+        <span class="meta">{c.when}</span>
+        <div>
+          <span class="title">{c.code}: {c.name}</span>
+          <span class="authors">{c.role} · {c.institution}</span>
+          <span class="venue">{c.note}</span>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="pub-year">
+    <h3>Guest Lectures</h3>
+    {guestLectures.map((g) => (
+      <div class="pub-item">
+        <span class="meta">{g.when}</span>
+        <div>
+          <span class="title">{g.code}: {g.name}</span>
+          <span class="authors">{g.institution}</span>
+          <span class="venue">Lecture on {g.topic}.</span>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="pub-year">
+    <h3>MSc Thesis Supervision</h3>
+    {supervisions.map((s) => (
+      <div class="pub-item">
+        <span class="meta">{s.when}</span>
+        <div>
+          <span class="title">{s.thesis}</span>
+          <span class="authors">
+            {s.studentUrl
+              ? <a href={s.studentUrl}>{s.student}</a>
+              : s.student}
+            {" · "}{s.institution}
+          </span>
+        </div>
+      </div>
+    ))}
+  </section>
+
+</Base>

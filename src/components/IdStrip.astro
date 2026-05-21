@@ -1,0 +1,14 @@
+---
+const identifiers = [
+  { label: "Scholar",  url: "https://scholar.google.com/citations?user=h0_h_q4AAAAJ&hl=en" },
+  { label: "GitHub",   url: "https://github.com/chrisk21" },
+  { label: "ORCID",    url: "https://orcid.org/0000-0003-3015-154X" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/christoskoutras/" },
+  { label: "CV",       url: "/assets/pdf/Curriculum_Vitae.pdf" },
+];
+---
+<ul class="id-strip" aria-label="Find me elsewhere">
+  {identifiers.map((i) => (
+    <li><a href={i.url}>{i.label}</a></li>
+  ))}
+</ul>

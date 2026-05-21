@@ -1,0 +1,139 @@
+---
+import Base from "../layouts/Base.astro";
+import IdStrip from "../components/IdStrip.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .map((p) => p.data)
+  .sort((a, b) => a.order - b.order);
+
+const delftProjects = projects.filter((p) => p.era === "delft");
+const vidaProjects  = projects.filter((p) => p.era === "vida");
+
+const news = (await getCollection("news"))
+  .map((n) => n.data)
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+const externalReview = [
+  "VLDB 2023/2024", "IEEE ICDE 2019/2023", "EDBT 2024",
+  "ACM SIGMOD 2018/2021", "ACM SIGSPATIAL 2017", "SSTD 2017",
+];
+const pcMember = [
+  "VLDB 2026/2027", "ICDE 2026/2027", "SIGMOD 2026",
+  "ICDE 2024 Demonstration Track", "ECML/PKDD 2024 Applied Data Science Track",
+  "DBML 2022–2024, 2026 (ICDE Workshop)", "AIDB 2026 (VLDB Workshop)",
+];
+const journals = [
+  "Data & Knowledge Engineering (DKE)", "Patterns (Cell Press)", "Information Systems",
+];
+
+const awards = [
+  {
+    year: "2026",
+    title: "IEEE ICDE Distinguished PC Award",
+    note: "For outstanding contributions in reviewing and discussions on the Program Committee.",
+  },
+];
+---
+<Base title="Christos Koutras" current="about">
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="visually-hidden">Christos Koutras</h1>
+      <p class="lede">
+        Postdoctoral Research Associate at <a href="https://vida.engineering.nyu.edu/">NYU VIDA</a>.
+      </p>
+      <p class="bio">
+        I build data integration solutions for practitioners and developers, working across
+        biomedical and healthcare, open government, and organizational data. My research covers
+        data matching at the schema and value levels, metadata generation, and the composite
+        harmonization workflows that bring these components together.
+      </p>
+      <p class="bio">
+        Before NYU, I received my PhD from the <a href="http://www.wis.ewi.tudelft.nl/">Web
+        Information Systems</a> group at TU Delft, advised by
+        <a href="http://asterios.katsifodimos.com">Asterios Katsifodimos</a> and
+        <a href="http://www.wis.ewi.tudelft.nl/lofi/">Christoph Lofi</a>. I obtained my MPhil at
+        <a href="https://www.ust.hk/">HKUST</a> and my MEng in ECE at
+        <a href="https://www.ntua.gr/en/">NTUA</a>.
+      </p>
+    </div>
+
+    <aside class="hero-sidebar">
+      <img class="hero-photo" src="/avatar.jpg" alt="Christos Koutras" />
+      <div class="hero-contact">
+        <p class="contact-address">
+          Office 1137, 11th floor<br />
+          370 Jay Street<br />
+          Brooklyn, NY 11201
+        </p>
+        <p class="contact-email">
+          <a href="mailto:christos.koutras@nyu.edu">christos.koutras@nyu.edu</a>
+        </p>
+        <IdStrip />
+      </div>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Selected projects</h2>
+
+    <h3 class="era-label">TU Delft</h3>
+    <div class="project-grid">
+      {delftProjects.map((p) => (
+        <ProjectCard name={p.name} venues={p.venues} tagline={p.tagline} links={p.links} />
+      ))}
+    </div>
+
+    <h3 class="era-label">NYU</h3>
+    <div class="project-grid">
+      {vidaProjects.map((p) => (
+        <ProjectCard name={p.name} venues={p.venues} tagline={p.tagline} links={p.links} />
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>News</h2>
+    {news.map((n) => (
+      <div class="news-item">
+        <time datetime={n.date}>{n.label}</time>
+        <div set:html={n.html} />
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2>Awards</h2>
+    {awards.map((a) => (
+      <div class="news-item">
+        <time>{a.year}</time>
+        <div>
+          <span class="award-title">{a.title}</span>
+          <span class="award-note">{a.note}</span>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2>Service</h2>
+
+    <div class="service-block">
+      <h3>Program Committee</h3>
+      <p>{pcMember.join(" · ")}</p>
+    </div>
+
+    <div class="service-block">
+      <h3>External Reviewing</h3>
+      <p>{externalReview.join(" · ")}</p>
+    </div>
+
+    <div class="service-block">
+      <h3>Reviewing for Journals</h3>
+      <p>{journals.join(" · ")}</p>
+    </div>
+  </section>
+
+</Base>

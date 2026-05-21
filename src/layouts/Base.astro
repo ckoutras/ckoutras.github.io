@@ -1,0 +1,81 @@
+---
+import "../styles/style.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: "about" | "publications" | "teaching";
+}
+const {
+  title,
+  description = "Christos Koutras — Postdoctoral Research Associate at NYU VIDA, working on data integration and schema matching.",
+  current,
+} = Astro.props;
+
+const site = Astro.site?.toString() ?? "https://ckoutras.github.io";
+const ogImage = new URL("/og.png", site).toString();
+const canonical = new URL(Astro.url.pathname, site).toString();
+
+const nav = [
+  { href: "/",              label: "About",        key: "about" },
+  { href: "/publications/", label: "Publications", key: "publications" },
+  { href: "/teaching/",     label: "Teaching",     key: "teaching" },
+  { href: "/assets/pdf/Curriculum_Vitae.pdf", label: "CV", key: "cv" },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Christos Koutras" />
+  <meta property="profile:first_name" content="Christos" />
+  <meta property="profile:last_name" content="Koutras" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a href="/" class="brand">Christos Koutras</a>
+      <nav>
+        {nav.map((n) => (
+          <a href={n.href} aria-current={current === n.key ? "page" : undefined}>{n.label}</a>
+        ))}
+        <ThemeToggle />
+      </nav>
+    </header>
+
+    <slot />
+
+    <footer class="site">
+      <span>© 2026 Christos Koutras</span>
+      <span>Built with Astro · Source on <a href="https://github.com/chrisk21/ckoutras.github.io">GitHub</a></span>
+    </footer>
+  </div>
+</body>
+</html>
