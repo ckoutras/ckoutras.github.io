@@ -16,7 +16,7 @@ const { name, venues = [], tagline, links } = Astro.props;
   {links.length > 0 && (
     <ul class="project-links">
       {links.map((l) => (
-        <li><a href={l.url}>{l.label} <span aria-hidden="true">→</span></a></li>
+        <li><a href={l.url}>{l.label}</a></li>
       ))}
     </ul>
   )}
