@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist -b master --dotfiles -m \"Deploy site build\""
   },
   "dependencies": {
     "astro": "^4.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
