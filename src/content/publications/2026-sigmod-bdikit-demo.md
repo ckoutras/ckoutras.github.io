@@ -5,5 +5,4 @@ venue: "ACM SIGMOD 2026, Bangalore, India"
 venueShort: "SIGMOD 2026"
 year: 2026
 location: "Bangalore, India"
-note: "To appear"
 ---
