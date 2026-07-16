@@ -5,4 +5,5 @@ venue: "Proceedings of IEEE VIS 2025, Vienna, Austria"
 venueShort: "IEEE VIS 2025"
 year: 2025
 location: "Vienna, Austria"
+url: "https://arxiv.org/pdf/2507.16117"
 ---

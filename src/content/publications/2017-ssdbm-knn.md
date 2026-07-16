@@ -4,5 +4,6 @@ authors: "Kostas Patroumpas, **Christos Koutras**"
 venue: "29th International Conference on Scientific and Statistical Database Management (SSDBM), Chicago, USA"
 venueShort: "SSDBM 2017"
 year: 2017
-location: "Chicago, USA"
+location: "Chicago, IL, USA"
+url: "https://dl.acm.org/doi/pdf/10.1145/3085504.3085525"
 ---

@@ -4,5 +4,6 @@ authors: "**Christos Koutras**, Rihan Hai, Kyriakos Psarakis, Marios Fragkoulis,
 venue: "First Table Representation Learning Workshop @ NeurIPS 2022, New Orleans, USA"
 venueShort: "TRL @ NeurIPS 2022"
 year: 2022
-location: "New Orleans, USA"
+location: "New Orleans, LA, USA"
+url: "https://arxiv.org/abs/2206.12733"
 ---

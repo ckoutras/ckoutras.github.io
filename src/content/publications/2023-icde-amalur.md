@@ -4,5 +4,6 @@ authors: "Rihan Hai, **Christos Koutras**, Andra Ionescu, Ziyu Li, Wenbo Sun, Je
 venue: "Proceedings of IEEE ICDE 2023, Anaheim, USA"
 venueShort: "ICDE 2023"
 year: 2023
-location: "Anaheim, USA"
+location: "Anaheim, CA, USA"
+url: "https://arxiv.org/abs/2205.09681"
 ---
